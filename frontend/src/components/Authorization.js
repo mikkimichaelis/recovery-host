@@ -137,6 +137,7 @@ export const Authorization = (props) => {
 
   return (
     <>
+    {/* 
       <p>You are on this route: {location.pathname}</p>
 
       {!inGuestMode && <Button
@@ -171,7 +172,7 @@ export const Authorization = (props) => {
         </Route>
       </div>
       <Header navLinks={{ auth0Data: "Auth0 User Data" }} />
-      <Auth0User user={user} />
+      <Auth0User user={user} /> */}
     </>
   );
 };

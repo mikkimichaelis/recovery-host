@@ -55,6 +55,41 @@ function App() {
             "onMyUserContextChange",
             "sendAppInvitationToAllParticipants",
             "sendAppInvitation",
+
+            // not sure what happens if I pass in duplicate events
+            // "allowParticipantToRecord",
+            // "cloudRecording",
+            // "connect",
+            // "expandApp",
+            // "getMeetingContext",
+            // "getMeetingJoinUrl",
+            // "getMeetingParticipants",
+            // "getMeetingUUID",
+            // "getRecordingContext",
+            // "getRunningContext",
+            // "getSupportedjsApis",
+            // "getUserContext",
+            // "listCameras",
+            // "onActiveSpeakerChange",
+            // "onAuthorized",
+            // "onConnect",
+            // "onMeeting",
+            // "onMessage",
+            // "onMyUserContextChange",
+            // "onSendAppInvitation",
+            // "onShareApp",
+            // "openUrl",
+            // "postMessage",
+            // "promptAuthorize",
+            // "removeVirtualBackground",
+            // "sendAppInvitation",
+            // "shareApp",
+            // "showAppInvitationDialog",
+            // "sendAppInvitationToMeetingOwner",
+            // "sendAppInvitationToAllParticipants",
+            // "setVideoMirrorEffect",
+            // "setVirtualBackground",
+            // "showNotification"
           ],
           version: "0.16.0",
         });
@@ -192,16 +227,82 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello{user ? ` ${user.first_name} ${user.last_name}` : " Zoom Apps user"}!</h1>
-      <p>{`User Context Status: ${userContextStatus}`}</p>
+      <h1>Recovery Host</h1>
+      <p>Recovery Host is a Zoom App that aids in the hosting of recovery meetings</p>
+
+
+      {/* <h3>Links</h3> */}
+      <h4>Security</h4>
+      <ul>
+        <li>Allow all in chat</li>
+        <li>Disable participant unmute</li>
+      </ul>
+
+      <h3>Script</h3>
       <p>
+        Hi Everyone.  I'm ___ and I'm an addict.  My pronouns
+        are _____.  Welcome to the Transcendence trans, non-binary,
+        and gender non-conforming meeting of Narcotics Anonymous.
+      </p>
+      <p>
+        This is a closed, 60 minute meeting for addicts only
+        or for those who think they may have a problem with drugs.
+        It costs nothing to belong to our fellowship.
+        You're a member when you say you are.
+      </p>
+      <p>
+        Let's open the meeting with a moment of silence for the addict who
+        still suffers, followed by the WE version of the Serenity Prayer.
+        Can we have that moment now please?
+      </p>
+      <p>
+        <b>
+          God, grant us the serenity to accept the things we cannot change,
+          courage to change the things we can, and the wisdom to know the difference.
+        </b>
+      </p>
+
+      <p>May we please have a volunteer to read <button onClick={() => {
+        zoomSdk.openUrl({ url: "https://www.na.org/admin/include/spaw2/uploads/pdf/litfiles/us_english/misc/Who%20Is%20an%20Addict.pdf" })
+      }}>"Who Is An Addict"?</button></p>
+
+      <p>The format of this meeting is the NA Just For Today.  May we please have a volunteer read from the screen share?</p>
+      <button onClick={() => {
+        zoomSdk.openUrl({ url: "https://jftna.org/jft/" })
+      }}>NA JFT</button>
+
+      <p>7th Tradition states blah blah blah.  Details will be provided in chat.</p>
+      <p><button onClick={() => {
+        zoomSdk.sendMessage("7th Tradition details....");
+      }}>Provide 7th details in chat</button></p>
+
+
+      <h4>Security</h4>
+      <ul>
+        <li>Allolw participant unmute</li>
+      </ul>
+      <p>Now let's share!</p>
+
+      <button onClick={() => {}}>Start Timer</button>
+
+      <button onClick={() => {}}>1 min warning</button>
+
+      <p>...</p>
+
+      <button onClick={() => {
+        zoomSdk.openUrl({ url: "https://drive.google.com/file/d/1hwpZ-B3V64sWOqegeZqt4IRxHJ5yJW2s/view" })
+      }}>Meeting Slides</button>
+
+      {/* <h1>hi ya{user ? ` ${user.first_name} ${user.last_name}` : " Zoom Apps user"}!</h1> */}
+      {/* <p>{`User Context Status: ${userContextStatus}`}</p> */}
+      {/* <p>
         {runningContext ?
           `Running Context: ${runningContext}` :
           "Configuring Zoom JavaScript SDK..."
         }
-      </p>
+      </p> */}
 
-      <ApiScrollview />
+      {/* <ApiScrollview /> */}
       <Authorization
         handleError={setError}
         handleUserContextStatus={setUserContextStatus}
